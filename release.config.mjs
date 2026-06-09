@@ -9,7 +9,7 @@ export default {
         prepareCmd: 'node scripts/sync-version.mjs ${nextRelease.version}',
       },
     ],
-    ['@semantic-release/npm', { pkgRoot: 'dist/forge-angular-form-fields' }],
+    ['@semantic-release/npm', { pkgRoot: 'dist/forge-angular-form-fields', provenance: true }],
     [
       '@semantic-release/git',
       {
