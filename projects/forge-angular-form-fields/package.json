@@ -1,6 +1,16 @@
 {
   "name": "forge-angular-form-fields",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaxcksn/forge-angular-form-fields.git"
+  },
+  "license": "Apache-2.0",
+  "description": "Signal Forms integration for Tyler Forge Angular components",
+  "author": {
+    "name": "Jackson Casey",
+    "url": "https://github.com/jaxcksn"
+  },
   "peerDependencies": {
     "@angular/common": ">=21.0.0",
     "@angular/core": ">=21.0.0",

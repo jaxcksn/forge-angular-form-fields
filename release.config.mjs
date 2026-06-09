@@ -3,7 +3,6 @@ export default {
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    '@semantic-release/changelog',
     [
       '@semantic-release/exec',
       {
@@ -14,7 +13,7 @@ export default {
     [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md', 'projects/forge-angular-form-fields/package.json'],
+        assets: ['projects/forge-angular-form-fields/package.json'],
         message: 'chore(release): ${nextRelease.version} [skip ci]',
       },
     ],
