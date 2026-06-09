@@ -1,0 +1,250 @@
+import { booleanAttribute, Component, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef, NgZone, numberAttribute, Input, inject } from '@angular/core';
+import { TimePickerComponent as TimePickerComponentCustomElement, defineTimePickerComponent } from '@tylertech/forge';
+
+@Component({
+  selector: 'forge-time-picker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+})
+export class FormTimePickerComponent {
+  protected elementRef = inject<ElementRef<TimePickerComponentCustomElement>>(ElementRef);
+  protected zone = inject(NgZone);
+
+  public readonly nativeElement = this.elementRef.nativeElement;
+
+  @Input()
+  public set value(value: TimePickerComponentCustomElement['value']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.value = value;
+    });
+  }
+  public get value(): TimePickerComponentCustomElement['value'] {
+    return this.nativeElement.value;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set open(value: TimePickerComponentCustomElement['open']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.open = value;
+    });
+  }
+  public get open(): TimePickerComponentCustomElement['open'] {
+    return this.nativeElement.open;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set allowSeconds(value: TimePickerComponentCustomElement['allowSeconds']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.allowSeconds = value;
+    });
+  }
+  public get allowSeconds(): TimePickerComponentCustomElement['allowSeconds'] {
+    return this.nativeElement.allowSeconds;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set masked(value: TimePickerComponentCustomElement['masked']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.masked = value;
+    });
+  }
+  public get masked(): TimePickerComponentCustomElement['masked'] {
+    return this.nativeElement.masked;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set showMaskFormat(value: TimePickerComponentCustomElement['showMaskFormat']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.showMaskFormat = value;
+    });
+  }
+  public get showMaskFormat(): TimePickerComponentCustomElement['showMaskFormat'] {
+    return this.nativeElement.showMaskFormat;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set use24HourTime(value: TimePickerComponentCustomElement['use24HourTime']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.use24HourTime = value;
+    });
+  }
+  public get use24HourTime(): TimePickerComponentCustomElement['use24HourTime'] {
+    return this.nativeElement.use24HourTime;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set allowInvalidTime(value: TimePickerComponentCustomElement['allowInvalidTime']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.allowInvalidTime = value;
+    });
+  }
+  public get allowInvalidTime(): TimePickerComponentCustomElement['allowInvalidTime'] {
+    return this.nativeElement.allowInvalidTime;
+  }
+
+  @Input()
+  public set restrictedTimes(value: TimePickerComponentCustomElement['restrictedTimes']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.restrictedTimes = value;
+    });
+  }
+  public get restrictedTimes(): TimePickerComponentCustomElement['restrictedTimes'] {
+    return this.nativeElement.restrictedTimes;
+  }
+
+  @Input()
+  public set startTime(value: TimePickerComponentCustomElement['startTime']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.startTime = value;
+    });
+  }
+  public get startTime(): TimePickerComponentCustomElement['startTime'] {
+    return this.nativeElement.startTime;
+  }
+
+  @Input({ transform: numberAttribute })
+  public set step(value: TimePickerComponentCustomElement['step']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.step = value;
+    });
+  }
+  public get step(): TimePickerComponentCustomElement['step'] {
+    return this.nativeElement.step;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set allowInput(value: TimePickerComponentCustomElement['allowInput']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.allowInput = value;
+    });
+  }
+  public get allowInput(): TimePickerComponentCustomElement['allowInput'] {
+    return this.nativeElement.allowInput;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set showNow(value: TimePickerComponentCustomElement['showNow']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.showNow = value;
+    });
+  }
+  public get showNow(): TimePickerComponentCustomElement['showNow'] {
+    return this.nativeElement.showNow;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set showHourOptions(value: TimePickerComponentCustomElement['showHourOptions']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.showHourOptions = value;
+    });
+  }
+  public get showHourOptions(): TimePickerComponentCustomElement['showHourOptions'] {
+    return this.nativeElement.showHourOptions;
+  }
+
+  @Input()
+  public set customOptions(value: TimePickerComponentCustomElement['customOptions']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.customOptions = value;
+    });
+  }
+  public get customOptions(): TimePickerComponentCustomElement['customOptions'] {
+    return this.nativeElement.customOptions;
+  }
+
+  @Input()
+  public set validationCallback(value: TimePickerComponentCustomElement['validationCallback']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.validationCallback = value;
+    });
+  }
+  public get validationCallback(): TimePickerComponentCustomElement['validationCallback'] {
+    return this.nativeElement.validationCallback;
+  }
+
+  @Input()
+  public set parseCallback(value: TimePickerComponentCustomElement['parseCallback']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.parseCallback = value;
+    });
+  }
+  public get parseCallback(): TimePickerComponentCustomElement['parseCallback'] {
+    return this.nativeElement.parseCallback;
+  }
+
+  @Input()
+  public set formatCallback(value: TimePickerComponentCustomElement['formatCallback']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.formatCallback = value;
+    });
+  }
+  public get formatCallback(): TimePickerComponentCustomElement['formatCallback'] {
+    return this.nativeElement.formatCallback;
+  }
+
+  @Input()
+  public set coercionCallback(value: TimePickerComponentCustomElement['coercionCallback']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.coercionCallback = value;
+    });
+  }
+  public get coercionCallback(): TimePickerComponentCustomElement['coercionCallback'] {
+    return this.nativeElement.coercionCallback;
+  }
+
+  @Input()
+  public set prepareMaskCallback(value: TimePickerComponentCustomElement['prepareMaskCallback']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.prepareMaskCallback = value;
+    });
+  }
+  public get prepareMaskCallback(): TimePickerComponentCustomElement['prepareMaskCallback'] {
+    return this.nativeElement.prepareMaskCallback;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set disabled(value: TimePickerComponentCustomElement['disabled']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.disabled = value;
+    });
+  }
+  public get disabled(): TimePickerComponentCustomElement['disabled'] {
+    return this.nativeElement.disabled;
+  }
+
+  @Input()
+  public set popupClasses(value: TimePickerComponentCustomElement['popupClasses']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.popupClasses = value;
+    });
+  }
+  public get popupClasses(): TimePickerComponentCustomElement['popupClasses'] {
+    return this.nativeElement.popupClasses;
+  }
+
+  @Input({ transform: booleanAttribute })
+  public set allowDropdown(value: TimePickerComponentCustomElement['allowDropdown']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.allowDropdown = value;
+    });
+  }
+  public get allowDropdown(): TimePickerComponentCustomElement['allowDropdown'] {
+    return this.nativeElement.allowDropdown;
+  }
+
+  @Input()
+  public set popupTarget(value: TimePickerComponentCustomElement['popupTarget']) {
+    this.zone.runOutsideAngular(() => {
+      this.nativeElement.popupTarget = value;
+    });
+  }
+  public get popupTarget(): TimePickerComponentCustomElement['popupTarget'] {
+    return this.nativeElement.popupTarget;
+  }
+
+  constructor() {
+    defineTimePickerComponent();
+    const changeDetectorRef = inject(ChangeDetectorRef);
+    changeDetectorRef.detach();
+  }
+}

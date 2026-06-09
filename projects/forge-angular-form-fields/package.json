@@ -1,0 +1,12 @@
+{
+  "name": "forge-angular-form-fields",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": ">=21.0.0",
+    "@angular/core": ">=21.0.0",
+    "@tylertech/forge": "^3.13.1",
+    "@tylertech/forge-core": "^3.3.1",
+    "@tylertech/forge-angular": "^7.1.0"
+  },
+  "sideEffects": false
+}

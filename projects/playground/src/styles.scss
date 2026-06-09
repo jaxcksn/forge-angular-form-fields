@@ -1,0 +1,10 @@
+@use '@tylertech/forge/sass/forge';
+@use '@tylertech/forge/sass/forge-tokens';
+@use '@tylertech/forge/sass/forge-core';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--forge-theme-surface);
+  color: var(--forge-theme-on-surface);
+}

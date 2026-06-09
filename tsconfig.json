@@ -4,6 +4,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "strict": true,
+    "paths": {
+      "forge-angular-form-fields": [
+        "./projects/forge-angular-form-fields/src/public-api.ts"
+      ]
+    },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -21,5 +26,16 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/forge-angular-form-fields/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/forge-angular-form-fields/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/playground/tsconfig.app.json"
+    }
+  ]
 }

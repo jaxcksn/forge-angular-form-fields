@@ -1,0 +1,181 @@
+<forge-scaffold>
+  <forge-toolbar slot="header" title-text="Signal Forms Playground">
+    <span slot="end">forge-angular-form-fields</span>
+  </forge-toolbar>
+
+  <div slot="body" class="body-content">
+    <forge-card class="form-card">
+      <h2>Demo Form</h2>
+      <p class="description">
+        All fields below use Angular Signal Forms with the forge-angular-form-fields directives.
+      </p>
+
+      <div class="form-fields">
+        <section class="field-section">
+          <h3>Text Field (string)</h3>
+          <forge-text-field [formField]="demoForm.username">
+            <input type="text" id="username-input" />
+            <label for="username-input">Username</label>
+          </forge-text-field>
+        </section>
+
+        <section class="field-section">
+          <h3>Text Field (textarea)</h3>
+          <forge-text-field [formField]="demoForm.bio">
+            <textarea id="bio-input"></textarea>
+            <label for="bio-input">Bio</label>
+          </forge-text-field>
+        </section>
+
+        <section class="field-section">
+          <h3>Text Field (number)</h3>
+          <forge-text-field number [formField]="demoForm.age">
+            <input type="number" id="age-input" />
+            <label for="age-input">Age</label>
+          </forge-text-field>
+        </section>
+
+        <section class="field-section">
+          <h3>Autocomplete (single)</h3>
+          <forge-autocomplete [formField]="demoForm.favoriteColor" [filter]="filterColors">
+            <forge-text-field>
+              <input type="text" id="color-input" />
+              <label for="color-input">Favorite Color</label>
+            </forge-text-field>
+          </forge-autocomplete>
+        </section>
+
+        <section class="field-section">
+          <h3>Autocomplete (multiple)</h3>
+          <forge-autocomplete
+            multiple
+            [formField]="demoForm.favoriteColors"
+            [filter]="filterColors"
+          >
+            <forge-text-field [showClear]="true">
+              <input type="text" id="colors-input" />
+              <label for="colors-input">Favorite Colors</label>
+            </forge-text-field>
+          </forge-autocomplete>
+        </section>
+
+        <section class="field-section">
+          <h3>Select (single)</h3>
+          <forge-select [formField]="demoForm.selectedCountry" label="Country">
+            <forge-option value="us">United States</forge-option>
+            <forge-option value="ca">Canada</forge-option>
+            <forge-option value="mx">Mexico</forge-option>
+            <forge-option value="uk">United Kingdom</forge-option>
+          </forge-select>
+        </section>
+
+        <section class="field-section">
+          <h3>Select (multiple)</h3>
+          <forge-select multiple [formField]="demoForm.selectedCountries" label="Countries">
+            <forge-option value="us">United States</forge-option>
+            <forge-option value="ca">Canada</forge-option>
+            <forge-option value="mx">Mexico</forge-option>
+            <forge-option value="uk">United Kingdom</forge-option>
+          </forge-select>
+        </section>
+
+        <section class="field-section">
+          <h3>Button Toggle Group (single)</h3>
+          <forge-button-toggle-group [formField]="demoForm.size">
+            <forge-button-toggle value="sm">Small</forge-button-toggle>
+            <forge-button-toggle value="md">Medium</forge-button-toggle>
+            <forge-button-toggle value="lg">Large</forge-button-toggle>
+            <forge-button-toggle value="xl">X-Large</forge-button-toggle>
+          </forge-button-toggle-group>
+        </section>
+
+        <section class="field-section">
+          <h3>Button Toggle Group (multiple)</h3>
+          <forge-button-toggle-group multiple [formField]="demoForm.sizes">
+            <forge-button-toggle value="sm">Small</forge-button-toggle>
+            <forge-button-toggle value="md">Medium</forge-button-toggle>
+            <forge-button-toggle value="lg">Large</forge-button-toggle>
+            <forge-button-toggle value="xl">X-Large</forge-button-toggle>
+          </forge-button-toggle-group>
+        </section>
+
+        <section class="field-section">
+          <h3>Chip (checkbox behavior)</h3>
+          <forge-chip-set>
+            <forge-chip [formField]="demoForm.chipSelected">I agree</forge-chip>
+          </forge-chip-set>
+        </section>
+
+        <section class="field-section">
+          <h3>Chip Set (multi-select)</h3>
+          <forge-chip-set [formField]="demoForm.chipSelections">
+            <forge-chip value="angular">Angular</forge-chip>
+            <forge-chip value="react">React</forge-chip>
+            <forge-chip value="vue">Vue</forge-chip>
+            <forge-chip value="svelte">Svelte</forge-chip>
+          </forge-chip-set>
+        </section>
+
+        <section class="field-section">
+          <h3>Date Range Picker</h3>
+          <forge-date-range-picker [formField]="demoForm.dateRange">
+            <forge-text-field>
+              <label for="from-date-input">Select date range</label>
+              <input id="from-date-input" type="text" placeholder="From date..." />
+              <input id="to-date-input" type="text" placeholder="To date..." />
+            </forge-text-field>
+          </forge-date-range-picker>
+        </section>
+
+        <section class="field-section">
+          <h3>Time Picker</h3>
+          <forge-time-picker [formField]="demoForm.time">
+            <forge-text-field>
+              <label for="time-picker-input">Choose time</label>
+              <input type="text" id="time-picker-input" />
+            </forge-text-field>
+          </forge-time-picker>
+        </section>
+
+        <section class="field-section">
+          <h3>Slider</h3>
+          <forge-slider [formField]="demoForm.volume" data-aria-label="Volume"></forge-slider>
+        </section>
+
+        <section class="field-section">
+          <h3>Slider (range)</h3>
+          <forge-slider range [formField]="demoForm.priceRange" data-aria-label-start="Min price" data-aria-label-end="Max price"></forge-slider>
+        </section>
+
+        <section class="field-section">
+          <h3>Checkbox</h3>
+          <forge-checkbox [formField]="demoForm.acceptTerms">
+            <span>I accept the terms and conditions</span>
+          </forge-checkbox>
+        </section>
+
+        <section class="field-section">
+          <h3>Switch</h3>
+          <forge-switch [formField]="demoForm.notifications">
+            Enable notifications
+          </forge-switch>
+        </section>
+      </div>
+
+      <div class="form-actions">
+        <forge-button variant="raised" (click)="submitForm()">Submit</forge-button>
+        <forge-button variant="outlined" (click)="resetForm()">Reset</forge-button>
+      </div>
+    </forge-card>
+
+    <forge-card class="state-card">
+      <h2>Form State</h2>
+      <div class="state-grid">
+        <div class="state-item">
+          <strong>Model Value:</strong>
+          <pre>{{ demoForm().errorSummary() | json }}</pre>
+        </div>
+      </div>
+    </forge-card>
+  </div>
+</forge-scaffold>
